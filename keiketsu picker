@@ -1,22 +1,70 @@
 <!DOCTYPE html><html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <title>経穴ランダム表示システム</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>経穴ランダム表示</title>
   <style>
-    body { font-family: sans-serif; background: #f2f2f2; padding: 20px; }
-    h1 { color: #333; }
-    .section { margin-bottom: 20px; }
-    .result { font-size: 1.2em; margin: 5px 0; }
-    button { padding: 10px 20px; font-size: 1em; margin-top: 10px; }
-    .genre { font-weight: bold; }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #f0f9ff, #cbebff);
+      padding: 20px;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    h1 {
+      color: #0a3d62;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .container {
+      background: #ffffffcc;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      width: 90%;
+      max-width: 500px;
+    }
+    .result {
+      font-size: 1.1em;
+      margin: 8px 0;
+      padding: 10px;
+      background: #f8faff;
+      border-left: 5px solid #00a8ff;
+      border-radius: 5px;
+    }
+    .genre {
+      font-weight: bold;
+      color: #0077b6;
+    }
+    button {
+      background-color: #00a8ff;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      padding: 12px 20px;
+      font-size: 1em;
+      margin: 10px 5px 0 5px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    button:hover {
+      background-color: #007bb8;
+    }
+    .button-container {
+      text-align: center;
+    }
   </style>
 </head>
 <body>
-  <h1>経穴ランダム表示システム</h1>
-  <div class="section">
+  <h1>経穴ランダム表示</h1>
+  <div class="container">
     <div id="results"></div>
-    <button onclick="generateRandom()">次を表示</button>
-    <button onclick="resetData()">リセット</button>
+    <div class="button-container">
+      <button onclick="generateRandom()">次を表示</button>
+      <button onclick="resetData()">リセット</button>
+    </div>
   </div>  <script>
     const data = {
       "手の取穴": "中府、雲門、天府、侠白、魚際、少商、商陽、二間、三間、下廉、上廉、手三里、肘髎、手五里、臂臑、肩髃、青霊、少海、霊道、通里、陰郄、神門、少府、少衝、天泉、郄門、間使、労宮、中衝、関衝、液門、中渚、三陽絡、四瀆、清冷淵、消濼、臑会、肩髎".split("、"),
